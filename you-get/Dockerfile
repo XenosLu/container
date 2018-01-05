@@ -15,11 +15,9 @@ RUN apk add tzdata --update-cache \
     && apk del gcc libc-dev python3-dev \
     && mkdir /run/nginx \
     && rm -f /etc/nginx/conf.d/default.conf \
-    && rm -rf /var/cache/apk/* /tmp/* /root/.cache
-
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
-# RUN apk add py3-bottle
+    && rm -rf /var/cache/apk/* /tmp/* /root/.cache \
+    && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
+    && echo $TZ > /etc/timezone
 
 # copy nginx config file
 COPY xlmp.conf /etc/nginx/conf.d/
