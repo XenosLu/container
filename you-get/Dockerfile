@@ -4,6 +4,7 @@ FROM alpine:3.7
 
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
 ENV TZ 'Asia/Shanghai'
+ENV PS1 '[\u@\h \W]\$'
 
 RUN apk add tzdata --update-cache \
     && apk add python3 \
