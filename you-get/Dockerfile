@@ -19,4 +19,8 @@ RUN apk add tzdata --update-cache \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone
 
+# download script
+COPY d /bin
+RUN chmod +x /bin/d
+    
 CMD ["/bin/sh"]
