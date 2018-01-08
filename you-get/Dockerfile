@@ -21,9 +21,10 @@ RUN apk add tzdata --update-cache \
     && echo $TZ > /etc/timezone
 
 # download script
-COPY d /bin
-RUN chmod +x /bin/d
+COPY d  /usr/local/bin
+RUN chmod +x  /usr/local/bin/d
 
+#hotfix
 RUN curl -L https://github.com/XenosLu/you-get/raw/develop/src/you_get/extractors/netease.py > /usr/lib/python3.6/site-packages/you_get/extractors/netease.py
     
 CMD ["/bin/sh"]
