@@ -16,8 +16,6 @@ RUN apk add tzdata --update-cache \
     && apk add ffmpeg \
     && apk add curl \
     && apk del gcc libc-dev python3-dev \
-    && mkdir /run/nginx \
-    && rm -f /etc/nginx/conf.d/default.conf \
     && rm -rf /var/cache/apk/* /tmp/* /root/.cache
 
 # download script
