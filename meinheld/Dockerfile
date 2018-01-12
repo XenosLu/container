@@ -4,7 +4,8 @@ LABEL maintainer="xenos <xenos.lu@gmail.com>"
 ENV PS1 '[\u@\h \W]\$'
 ENV TZ 'Asia/Shanghai'
 
-RUN apk add --no-cache tzdata --update-cache \
+# RUN apk add --no-cache tzdata --update-cache \
+RUN apk add --no-cache tzdata \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone \
     && apk add --no-cache python3 \
