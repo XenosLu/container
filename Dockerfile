@@ -7,6 +7,8 @@ ENV PS1 '[\u@\h \W]\$'
 ENV TZ 'Asia/Shanghai'
 
 RUN apk add tzdata --update-cache \
+    && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
+    && echo $TZ > /etc/timezone \
     && apk add python3 \
     && apk add gcc libc-dev python3-dev \
     && pip3 install pycrypto==2.6.1 \
@@ -17,9 +19,7 @@ RUN apk add tzdata --update-cache \
     && apk del gcc libc-dev python3-dev \
     && mkdir /run/nginx \
     && rm -f /etc/nginx/conf.d/default.conf \
-    && rm -rf /var/cache/apk/* /tmp/* /root/.cache \
-    && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
-    && echo $TZ > /etc/timezone
+    && rm -rf /var/cache/apk/* /tmp/* /root/.cache
 
 # download script
 COPY d  /usr/local/bin
