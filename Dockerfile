@@ -10,6 +10,7 @@ RUN apk add --no-cache tzdata \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone \
     && apk add --no-cache python3 \
+    && pip3 install bottle==0.12.13 \
     && apk add --no-cache --virtual .fetch-deps \
        gcc \
        libc-dev \
