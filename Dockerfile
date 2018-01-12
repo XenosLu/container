@@ -1,4 +1,4 @@
-# meinheld
+# bottle enviroment
 FROM alpine:3.5
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
 
