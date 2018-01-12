@@ -15,6 +15,7 @@ RUN apk add --no-cache tzdata \
        python3-dev \
     && pip3 install meinheld==0.6.1 \
     && apk del .fetch-deps \
-    && rm -rf /var/cache/apk/* /tmp/* /root/.cache
+    && rm -rf /var/cache/*
+    # && rm -rf /var/cache/apk/* /tmp/* /root/.cache
         
 CMD ["/bin/sh"]
