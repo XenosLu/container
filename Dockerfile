@@ -1,4 +1,3 @@
-#!/bin/sh
 ## you-get
 FROM alpine:3.7
 
