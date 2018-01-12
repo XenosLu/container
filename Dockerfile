@@ -5,10 +5,10 @@ LABEL maintainer="xenos <xenos.lu@gmail.com>"
 ENV PS1 '[\u@\h \W]\$'
 ENV TZ 'Asia/Shanghai'
 
-RUN apk add tzdata --update-cache \
+RUN apk add --no-cache tzdata \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone \
-    && apk add python3 \
+    && apk add --no-cache python3 \
     && apk add --no-cache --virtual .fetch-deps \
        gcc \
        libc-dev \
@@ -17,8 +17,8 @@ RUN apk add tzdata --update-cache \
     # && pip3 install pycryptodome==3.4.7 \
     && apk del .fetch-deps \
     && pip3 install you-get \
-    && apk add ffmpeg \
-    && apk add curl \
+    && apk add --no-cache ffmpeg \
+    && apk add --no-cache curl \
     && rm -rf /var/cache/apk/* /tmp/* /root/.cache
 
 # download script
