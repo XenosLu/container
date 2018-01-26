@@ -19,7 +19,7 @@ RUN apk add --no-cache tzdata \
     # && pip3 install you-get \
     && apk add --no-cache git \
     && git clone -b develop https://github.com/soimort/you-get.git \
-    && python3 /you-get/setup.py install \
+    # && python3 /you-get/setup.py install \
     && apk add --no-cache ffmpeg \
     && apk add --no-cache curl \
     && rm -rf /var/cache/apk/* /tmp/* /root/.cache
