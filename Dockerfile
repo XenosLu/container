@@ -16,11 +16,16 @@ RUN apk add --no-cache tzdata \
     && pip3 install pycrypto==2.6.1 \
     # && pip3 install pycryptodome==3.4.7 \
     && apk del .fetch-deps \
-    && pip3 install you-get \
+    # && pip3 install you-get \
+    && apk add --no-cache git \
+    && git clone -b develop https://github.com/soimort/you-get.git \
+    && python3 /you-get setup.py install
     && apk add --no-cache ffmpeg \
     && apk add --no-cache curl \
     && rm -rf /var/cache/apk/* /tmp/* /root/.cache
 
+# 
+    
 # download script
 COPY d  /usr/local/bin
 RUN chmod +x  /usr/local/bin/d
