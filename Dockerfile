@@ -24,7 +24,7 @@ RUN apk add --no-cache tzdata \
     && apk add --no-cache curl \
     && rm -rf /var/cache/apk/* /tmp/* /root/.cache
 
-# 
+
     
 # download script
 COPY d  /usr/local/bin
