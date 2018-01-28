@@ -21,8 +21,8 @@ RUN apk add --no-cache tzdata \
     && git clone -b develop https://github.com/soimort/you-get.git \
     && cd you-get \
     # hotfix \
-    && sed -i 's/0512/0513/g' /you-get/src/you_get/extractors/youku.py \
-    && curl -L https://github.com/XenosLu/you-get/raw/develop/src/you_get/extractors/netease.py > /you-get/src/you_get/extractors/netease.py
+    && sed -i 's/0512/0514/g' /you-get/src/you_get/extractors/youku.py \
+    && curl -L https://github.com/XenosLu/you-get/raw/develop/src/you_get/extractors/netease.py > /you-get/src/you_get/extractors/netease.py \
     # hotfix end \
     && python3 /you-get/setup.py install \
     && apk add --no-cache ffmpeg \
