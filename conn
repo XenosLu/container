@@ -1,0 +1,20 @@
+#!/bin/sh
+
+main(){
+netstat -ntlp 2>/dev/null | grep :1080
+if [ $? -eq 0 ]
+    then
+    echo status ok!
+else
+    echo not connected
+    rm -f /root/.ssh/known_hosts
+    netstat -ntlp 2>/dev/null | grep :10022 \
+    && ssh -Nf -D 0.0.0.0:1080 -p 10022 127.0.0.1 \
+    && echo connect success!
+fi
+}
+while [ True ]
+    do echo waiting 5s
+    sleep 5
+    main
+done
