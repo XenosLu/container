@@ -11,6 +11,7 @@ RUN apk add --no-cache tzdata \
     && apk add --no-cache python3 \
     && apk add --no-cache aria2 \
     && apk add --no-cache unrar \
+    && apk add --no-cache curl \
     && apk add --no-cache --virtual .fetch-deps \
        gcc \
        libc-dev \
