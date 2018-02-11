@@ -12,6 +12,7 @@ RUN apk add --no-cache tzdata \
     && apk add --no-cache aria2 \
     && apk add --no-cache unrar \
     && apk add --no-cache curl \
+    && apk add --no-cache ffmpeg \
     && apk add --no-cache --virtual .fetch-deps \
        gcc \
        libc-dev \
@@ -28,8 +29,6 @@ RUN apk add --no-cache tzdata \
     && curl -L https://github.com/XenosLu/you-get/raw/develop/src/you_get/extractors/netease.py > /you-get/src/you_get/extractors/netease.py \
     # hotfix end \
     && python3 /you-get/setup.py install \
-    && apk add --no-cache ffmpeg \
-    && apk add --no-cache curl \
     && rm -rf /var/cache/apk/* /tmp/* /root/.cache
 
     
