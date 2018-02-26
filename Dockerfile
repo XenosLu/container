@@ -10,7 +10,6 @@ RUN apk add --no-cache \
             python3 \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone \
-    && apk del .fetch-deps \
     && rm -rf /var/cache/* /root/.cache
 
 CMD ["/bin/sh"]
