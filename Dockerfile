@@ -1,5 +1,5 @@
-# python 3.5.2 enviroment
-FROM alpine:3.6
+# python 3.6.3 enviroment
+FROM alpine:3.7
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
 
 ENV PS1 '\h:\w\$ '
