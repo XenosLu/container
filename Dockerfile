@@ -32,7 +32,7 @@ RUN apk add --no-cache tzdata \
     && python3 /you-get/setup.py install \
     && rm -rf /var/cache/apk/* /tmp/* /root/.cache
 
-    
+
 # download script
 COPY d  /usr/local/bin
 RUN chmod +x  /usr/local/bin/d
