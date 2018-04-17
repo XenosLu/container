@@ -27,7 +27,7 @@ if [ ! -f /var/lib/mldonkey/downloads.ini ]; then
     /usr/lib/mldonkey/mldonkey_command -p "" "set ED2K-firewalled-mode false" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set ED2K-port 20562" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set BT-client_port 6882" "save"
-    /usr/lib/mldonkey/mldonkey_command -p "" "set BT-tracker_port 6881" "save"
+    /usr/lib/mldonkey/mldonkey_command -p "" "set BT-tracker_port 6883" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set BT-dht_port 3617" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set gui_port 4000" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set telnet_port 3999" "save"
