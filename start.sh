@@ -10,8 +10,8 @@ if [ ! -f /var/lib/mldonkey/downloads.ini ]; then
     sleep 5
     /usr/lib/mldonkey/mldonkey_command -p "" "set run_as_user mldonkey" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set allowed_ips 0.0.0.0/0" "save"
-    /usr/lib/mldonkey/mldonkey_command -p "" "share 0 /mnt/mldonkey_completed/files incoming_files" "save"
-    /usr/lib/mldonkey/mldonkey_command -p "" "share 0 /mnt/mldonkey_completed/directories incoming_directories" "save"
+    # /usr/lib/mldonkey/mldonkey_command -p "" "share 0 /mnt/mldonkey_completed/files incoming_files" "save"
+    # /usr/lib/mldonkey/mldonkey_command -p "" "share 0 /mnt/mldonkey_completed/directories incoming_directories" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "unshare shared" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "unshare incoming/files" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "unshare incoming/directories" "save"
