@@ -57,6 +57,8 @@ fi
 
 
 chown -R mldonkey:mldonkey /var/lib/mldonkey
+mkdir -p /mnt/mldonkey_completed
+mkdir -p /mnt/mldonkey_tmp
 chown -R mldonkey:mldonkey /mnt/mldonkey_completed
 chown -R mldonkey:mldonkey /mnt/mldonkey_tmp
 
