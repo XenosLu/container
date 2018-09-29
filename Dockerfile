@@ -1,25 +1,18 @@
-## you-get 0.4.1011
-FROM alpine:3.7
+## bypy
+FROM xenocider/container:python3.5.2
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
 
-ENV PS1 '[\u@\h \W]\$'
-ENV TZ 'Asia/Shanghai'
 
-
-RUN apk add --no-cache tzdata \
-    && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
-    && echo $TZ > /etc/timezone \
-    && apk add --no-cache python3 \
-    && apk add --no-cache --virtual .fetch-deps \
+RUN apk add --no-cache --virtual .fetch-deps \
        gcc \
        libc-dev \
-       python3-dev \
-    && pip3 install pycrypto==2.6.1 \
-    && pip3 install bypy \
-    # && pip3 install pycryptodome==3.4.7 \
-    && apk del .fetch-deps \
-    && apk add --no-cache git \
-    && rm -rf /var/cache/apk/* /tmp/* /root/.cache
+       python3-dev && \
+    pip3 install pycrypto==2.6.1 &&\
+    pip3 install bypy &&\
+    # pip3 install pycryptodome==3.4.7 &&\
+    apk del .fetch-deps &&\
+    apk add --no-cache git &&\
+    rm -rf /var/cache/apk/* /tmp/* /root/.cache
 
 
 COPY bdsync.sh /
