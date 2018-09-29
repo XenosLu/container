@@ -34,9 +34,6 @@ RUN apk add --no-cache tzdata \
     && rm -rf /var/cache/apk/* /tmp/* /root/.cache
 
 
-# download script
-COPY d /usr/local/bin
-RUN chmod +x  /usr/local/bin/d
 COPY bdsync.sh /
 RUN chmod +x  /bdsync.sh
 
