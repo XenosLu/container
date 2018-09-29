@@ -16,7 +16,7 @@ RUN apk add --no-cache --virtual .fetch-deps \
 
 
 COPY bdsync.sh /
-RUN chmod +x  /bdsync.sh
+# RUN chmod +x  /bdsync.sh
 
 #hotfix
 # RUN curl -L https://github.com/XenosLu/you-get/raw/develop/src/you_get/extractors/netease.py > /usr/lib/python3.6/site-packages/you_get/extractors/netease.py
