@@ -11,15 +11,11 @@ RUN apk add --no-cache --virtual .fetch-deps \
     pip3 install bypy &&\
     # pip3 install pycryptodome==3.4.7 &&\
     apk del .fetch-deps &&\
-    apk add --no-cache git &&\
+    # apk add --no-cache git &&\
     rm -rf /var/cache/apk/* /tmp/* /root/.cache
 
 
 COPY bdsync.sh /
 # RUN chmod +x  /bdsync.sh
 
-#hotfix
-# RUN curl -L https://github.com/XenosLu/you-get/raw/develop/src/you_get/extractors/netease.py > /usr/lib/python3.6/site-packages/you_get/extractors/netease.py
-
-#CMD ["/bin/sh"]
 CMD ["/bin/sh", "/bdsync.sh"]
