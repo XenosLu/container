@@ -6,7 +6,7 @@ LABEL maintainer="xenos <xenos.lu@gmail.com>"
 RUN apk add --no-cache --virtual .fetch-deps \
        gcc \
        libc-dev \
-       python3-dev && \
+       python3-dev &&\
     pip3 install pycrypto==2.6.1 &&\
     pip3 install bypy &&\
     # pip3 install pycryptodome==3.4.7 &&\
