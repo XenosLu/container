@@ -7,12 +7,12 @@ RUN apk add --no-cache \
         unrar \
         curl \
         ffmpeg \
-    # && pip3 install you-get \
-    && apk add --no-cache git \
-    && git clone -b develop https://github.com/soimort/you-get.git \
-    && cd you-get \
-    && python3 /you-get/setup.py install \
-    && rm -rf /var/cache/apk/* /tmp/* /root/.cache
+    # && pip3 install you-get &&\
+    apk add --no-cache git &&\
+    git clone -b develop https://github.com/soimort/you-get.git &&\
+    cd you-get &&\
+    python3 /you-get/setup.py install &&\
+    rm -rf /var/cache/apk/* /tmp/* /root/.cache
 
 
 # download script
