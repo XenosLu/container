@@ -19,4 +19,5 @@ RUN apk add --no-cache \
 COPY d /usr/local/bin
 RUN chmod +x  /usr/local/bin/d
 
-CMD ["/bin/sh"]
+# CMD ["/bin/sh"]
+CMD ["/bin/sh", "/usr/local/bin/d"]

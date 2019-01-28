@@ -7,8 +7,10 @@ cd /down
 count=0
 for line in $(cat list.txt)
 do
+    echo line
     you-get --playlist $line
     let count=count+1
     sleep 1
 done
 msg you-get done, $count dealed
+echo $count job done!
