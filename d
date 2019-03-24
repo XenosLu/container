@@ -9,7 +9,7 @@ for line in $(cat list.txt)
 do
     echo $line
     # you-get --playlist $line
-    you-get $line
+    you-get $line --debug
     let count=count+1
     sleep 1
 done
