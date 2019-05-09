@@ -14,7 +14,6 @@ RUN apk add --no-cache \
     python3 /you-get/setup.py install &&\
     rm -rf /var/cache/apk/* /tmp/* /root/.cache
 
-# add https://dl.google.com/android/repository/platform-tools-latest-linux.zip /
 # download script
 COPY d /usr/local/bin
 RUN chmod +x  /usr/local/bin/d
