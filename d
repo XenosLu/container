@@ -1,4 +1,5 @@
 #!/bin/sh
+pip3 install you-get --upgrade
 msg() {
     echo send msg by ifttt: $*
     curl -X POST -H "Content-Type: application/json" -d '{"value1":"'"$*"'"}' https://maker.ifttt.com/trigger/message/with/key/b2IOtkUxYpiZjRQ3Sji6qj
@@ -8,8 +9,8 @@ count=0
 for line in $(cat list.txt)
 do
     echo $line
-    # you-get --playlist $line
-    you-get $line --debug
+    you-get --playlist --debug $line
+    # you-get $line --debug
     let count=count+1
     sleep 1
 done
