@@ -1,2 +1,2 @@
-## xenocider/container:python3.7
-alpine3.8 python3.7
+## xenocider/container:python-alpine-latest
+alpine:latest python3
