@@ -1,4 +1,4 @@
-# xenocider/container:python3.6.5-centos6.9
+# xenocider/container:ubuntu-uam
 FROM ubuntu:18.04
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
 
