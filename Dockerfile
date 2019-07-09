@@ -13,7 +13,8 @@ RUN apt-get update &&\
 RUN gem install cf-uaac
 RUN apt-get install -y gnupg
 RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -
-RUN echo "deb https://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list &&\
+RUN echo "deb https://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+RUN apt-get update &&\
     apt-get install -y cf-cli &&\
     apt-get install -y python3-pip &&\
     apt-get install -y git
