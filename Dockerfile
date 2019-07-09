@@ -9,6 +9,7 @@ RUN apt-get update &&\
     apt-get install -y ruby ruby-dev &&\
     apt-get install -y g++ &&\
     apt-get install -y make &&\
+    apt-get install -y wget &&\
     gem install cf-uaac &&\
     wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add - &&\
     echo "deb https://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list &&\
