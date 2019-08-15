@@ -9,6 +9,8 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
     apt-get install -y python3\
                        python3-pip \
                        wget \
+                       curl \
+                       jq \
                        git \
                        make \
                        gnupg \
