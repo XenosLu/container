@@ -11,6 +11,6 @@ RUN apk add --no-cache \
     pip3 install --upgrade pip &&\
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     echo $TZ > /etc/timezone &&\
-    rm -rf /var/cache/* /root/.cache
+    rm -rf /root/.cache
 
 CMD ["/bin/sh"]
