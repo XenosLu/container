@@ -15,6 +15,7 @@ RUN apk add --no-cache \
             vim \
             openssh-client \
             openssh-server\
+            nethogs \
             &&\
     apk add --no-cache \
             python3-dev \
