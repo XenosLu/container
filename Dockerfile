@@ -24,6 +24,9 @@ RUN apk add --no-cache \
             gcc \
             libc-dev \
             make &&\
+    apk add --no-cache \
+            nodejs \
+            yarn &&\
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     echo $TZ > /etc/timezone &&\
     pip3 install docker-compose &&\
