@@ -1,5 +1,5 @@
 # node-js
-FROM xenocider/container:python3.7.3
+FROM alpine:3.10
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
 
 ENV PS1 '\h:\w\$ '
