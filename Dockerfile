@@ -10,4 +10,4 @@ RUN apk add --no-cache --virtual .fetch-deps \
 
 EXPOSE 8888
 
-CMD ["jupyter", "lab"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0" "--allow-root"]
