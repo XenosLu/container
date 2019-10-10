@@ -4,6 +4,7 @@ LABEL maintainer="xenos <xenos.lu@gmail.com>"
     
 RUN apk add --no-cache --virtual .fetch-deps \
         python3-dev \
+        libc-dev \
         g++ &&\
     pip3 install jupyterlab &&\
     apk del .fetch-deps &&\
