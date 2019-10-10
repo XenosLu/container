@@ -13,4 +13,4 @@ RUN apk add --no-cache --virtual .fetch-deps \
 
 EXPOSE 8888
 
-CMD ["/usr/bin/jupyter", "lab", "--ip=0.0.0.0" "--allow-root"]
+CMD ["/usr/bin/jupyter", "lab", "--ip=0.0.0.0", "--allow-root"]
