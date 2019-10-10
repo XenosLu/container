@@ -9,14 +9,14 @@ RUN yum install -y wget &&\
     yum install -y openssl-devel &&\
     yum install -y openldap-devel &&\
     yum install -y readline-devel
-RUN wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz &&\
-    tar zxvf Python-3.6.5.tgz &&\
-    cd Python-3.6.5 &&\
+RUN wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz &&\
+    tar zxvf Python-3.7.3.tgz &&\
+    cd Python-3.7.3 &&\
     ./configure &&\
     make &&\
     make install &&\
     cd .. &&\
-    rm -rf Python-3.6.5*
+    rm -rf Python-3.7.3*
 
 COPY requirements.txt /
 RUN pip3 install -r /requirements.txt
