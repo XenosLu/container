@@ -3,7 +3,8 @@ FROM xenocider/container:python3.7.3
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
     
 RUN apk add --no-cache --virtual .fetch-deps \
-       g++ &&\
+        python3-dev \
+        g++ &&\
     pip3 install jupyterlab &&\
     apk del .fetch-deps &&\
     rm -rf /var/cache/* /root/.cache
