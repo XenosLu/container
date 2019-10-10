@@ -9,7 +9,7 @@ steps:
   - name: dockersock
     path: /var/run/docker.sock
   commands:
-  - docker build -t jupyter:latest .
+  - docker build -t jupyter:test .
 
 volumes:
 - name: dockersock
