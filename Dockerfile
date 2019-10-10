@@ -8,7 +8,8 @@ RUN yum install -y wget &&\
     yum install -y zlib-devel &&\
     yum install -y openssl-devel &&\
     yum install -y openldap-devel &&\
-    yum install -y readline-devel
+    yum install -y readline-devel &&\
+    yum install -y libffi-devel
 RUN wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz &&\
     tar zxvf Python-3.7.3.tgz &&\
     cd Python-3.7.3 &&\
