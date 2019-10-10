@@ -1,13 +1,8 @@
-# docker-cli
-# FROM alpine:3.10
+# docker-workspace
 FROM xenocider/container:python3.7.3
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
 
-ENV PS1 '\h:\w\$ '
-ENV TZ 'Asia/Shanghai'
-
 RUN apk add --no-cache \
-            tzdata \
             docker-cli \
             docker \
             curl \
@@ -27,8 +22,6 @@ RUN apk add --no-cache \
     apk add --no-cache \
             nodejs \
             yarn &&\
-    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
-    echo $TZ > /etc/timezone &&\
     pip3 install docker-compose &&\
     rm -rf /root/.cache
 
