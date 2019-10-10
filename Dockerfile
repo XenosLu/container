@@ -8,7 +8,7 @@ RUN apk add --no-cache --virtual .fetch-deps \
         libffi-dev  \
         g++ &&\
     pip3 install jupyterlab &&\
-    apk del .fetch-deps &&\
+    # apk del .fetch-deps &&\
     rm -rf /var/cache/* /root/.cache
 
 EXPOSE 8888
