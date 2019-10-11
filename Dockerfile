@@ -9,7 +9,9 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
     apt-get install software-properties-common -y &&\
     add-apt-repository ppa:wireguard/wireguard -y &&\
     apt-get update &&\
-    apt-get install wireguard-dkms wireguard-tools resolvconf -y
+    apt-get install wireguard-dkms wireguard-tools -y
+    
+# RUN apt-get install resolvconf -y
 
 
 CMD ["/bin/bash"]
