@@ -18,3 +18,6 @@ echo "
   [Peer]
     PublicKey = $(cat client_publickey)
     AllowedIPs = 10.0.0.2/32 " > wg0.conf
+
+# wg-quick up wg0
+# wg-quick down wg0
