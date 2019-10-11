@@ -17,9 +17,9 @@ RUN apt-get install iproute2 -y
 
 RUN echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 
-ADD init.sh /
+ADD init.sh /usr/local/bin/init.sh
 
-RUN chmod +x /init.sh
+RUN chmod +x /usr/local/bin/init.sh
 
 WORKDIR /etc/wireguard
 
