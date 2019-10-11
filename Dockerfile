@@ -18,6 +18,7 @@ RUN echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 WORKDIR /etc/wireguard
 RUN wg genkey | tee server_privatekey | wg pubkey > server_publickey &&\
     wg genkey | tee client_privatekey | wg pubkey > client_publickey
+RUN apt-get install iproute2 -y
 RUN echo "\
   [Interface]\
     PrivateKey = $(cat server_privatekey)\
