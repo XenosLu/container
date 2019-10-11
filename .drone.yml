@@ -1,0 +1,17 @@
+---
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: xenocider/container:workspace
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
+  commands:
+  - docker build -t wireguard:test .
+
+volumes:
+- name: dockersock
+  host:
+    path: /var/run/docker.sock
