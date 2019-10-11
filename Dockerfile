@@ -12,6 +12,7 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
     apt-get install wireguard-dkms wireguard-tools -y
     
 # RUN apt-get install resolvconf -y
+RUN apt-get install net-tools -y
 RUN echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 # sysctl -p
 
