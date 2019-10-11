@@ -15,5 +15,6 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
 RUN apt-get install net-tools -y
 RUN echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 # sysctl -p
+WORKDIR /etc/wireguard
 
 CMD ["/bin/bash"]
