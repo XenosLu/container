@@ -1,5 +1,5 @@
 # docker-workspace
-FROM xenocider/container:python3.7.3
+FROM xenocider/container:python3.7.4
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
 
 RUN apk add --no-cache \
