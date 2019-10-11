@@ -36,4 +36,7 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
     
+ADD .profile /root/
+RUN chmod +x /root/.profile
+    
 CMD ["/usr/sbin/sshd", "-D"]
