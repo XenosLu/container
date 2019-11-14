@@ -27,12 +27,12 @@ RUN apk add --no-cache \
 
 RUN wget https://ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz &&\
     tar -zxvf lrzsz-0.12.20.tar.gz &&\
-	cd lrzsz-0.12.20 &&\
-	./configure &&\
-	make &&\
-	make install &&\ 
-	ln -s /usr/local/bin/lrz /usr/bin/rz &&\
-	ln -s /usr/local/bin/lsz /usr/bin/sz
+    cd lrzsz-0.12.20 &&\
+    ./configure &&\
+    make &&\
+    make install &&\ 
+    ln -s /usr/local/bin/lrz /usr/bin/rz &&\
+    ln -s /usr/local/bin/lsz /usr/bin/sz
 
 RUN ssh-keygen -A && \
     echo "root:$RANDOM" | chpasswd &&\
