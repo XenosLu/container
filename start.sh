@@ -36,9 +36,10 @@ if [ ! -f /var/lib/mldonkey/downloads.ini ]; then
     /usr/lib/mldonkey/mldonkey_command -p "" "set create_file_mode 664" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set create_dir_mode 775" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set create_file_sparse true" "save"
-    /usr/lib/mldonkey/mldonkey_command -p "" "urladd server.met http://sites.google.com/site/ircemulespanish/descargas-2/server.met?attredirects=0&d=1" "save"
-    /usr/lib/mldonkey/mldonkey_command -p "" "urladd guarding.p2p http://sites.google.com/site/ircemulespanish/descargas-2/ipfilter.zip" "save"
-    /usr/lib/mldonkey/mldonkey_command -p "" "urladd geoip.dat http://www.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz" "save"
+#    /usr/lib/mldonkey/mldonkey_command -p "" "urladd server.met http://sites.google.com/site/ircemulespanish/descargas-2/server.met?attredirects=0&d=1" "save"
+#    /usr/lib/mldonkey/mldonkey_command -p "" "urladd guarding.p2p http://sites.google.com/site/ircemulespanish/descargas-2/ipfilter.zip" "save"
+#    /usr/lib/mldonkey/mldonkey_command -p "" "urladd geoip.dat http://www.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz" "save"
+    /usr/lib/mldonkey/mldonkey_command -p "" "urladd geoip.dat https://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.tar.gz" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "urladd hublist http://dchublist.com/hublist.config.bz2" "save"
     if [ -z "$MLDONKEY_ADMIN_PASSWORD" ]; then
         /usr/lib/mldonkey/mldonkey_command -p "" "kill"
