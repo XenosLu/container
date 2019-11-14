@@ -25,6 +25,15 @@ RUN apk add --no-cache \
     pip3 install docker-compose &&\
     rm -rf /root/.cache
 
+RUN wget https://ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz &&\
+    tar -zxvf lrzsz-0.12.20.tar.gz &&\
+	cd lrzsz-0.12.20 &&\
+	./configure &&\
+	make &&\
+	make install &&\ 
+	ln -s /usr/local/bin/lrz /usr/bin/rz &&\
+	ln -s /usr/local/bin/lsz /usr/bin/sz
+
 RUN ssh-keygen -A && \
     echo "root:$RANDOM" | chpasswd &&\
     sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config &&\
