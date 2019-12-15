@@ -1,5 +1,5 @@
 #!/bin/sh
-pip3 install you-get --upgrade
+# pip3 install you-get --upgrade
 msg() {
     echo send msg by ifttt: $*
     curl -X POST -H "Content-Type: application/json" -d '{"value1":"'"$*"'"}' https://maker.ifttt.com/trigger/message/with/key/b2IOtkUxYpiZjRQ3Sji6qj
