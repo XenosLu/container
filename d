@@ -9,6 +9,7 @@ count=0
 for line in $(cat list.txt)
 do
     echo $line
+    echo you-get --playlist --debug $line
     you-get --playlist --debug $line
     # you-get $line --debug
     let count=count+1
