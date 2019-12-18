@@ -11,6 +11,7 @@ RUN apk add --no-cache \
             openssh-client \
             openssh-server\
             nethogs \
+            tmux \
             &&\
     apk add --no-cache \
             python3-dev \
