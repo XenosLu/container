@@ -4,6 +4,7 @@ FROM alpine:3.7
 RUN apk upgrade --update \
     && apk --update add openssh \
 	&& sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
+	&& sed -i s/#GatewayPorts.*/GatewayPorts\ yes/ /etc/ssh/sshd_config \
 	&& echo StrictHostKeyChecking no>> /etc/ssh/ssh_config \
 	&& echo "root:123456" | chpasswd \
 	&& rm -rf /var/cache/apk/* /tmp/*
