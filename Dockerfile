@@ -50,9 +50,10 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
 # RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 ADD .profile /root/
-
+Add start /
 
 # CMD ["/bin/sh", "-c", "'/usr/sbin/crond && /usr/sbin/sshd -D'"]
 # CMD ["/bin/sh", "-c", "'/usr/sbin/crond", "&&", "/usr/sbin/sshd", "-D'"]
 
-CMD ["/usr/sbin/sshd", "-D"]
+# CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/bin/sh", "/start"]
