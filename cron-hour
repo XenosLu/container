@@ -2,4 +2,4 @@
 onemirror=/share/CACHEDEV1_DATA/Utilities/onemirror
 
 echo $(date "+%m%d-%H%M") >> $onemirror/sync.log
-$onemirror/sync >> /root/cron.log
+$onemirror/sync >> $onemirror/sync.log
