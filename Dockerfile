@@ -51,9 +51,9 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
 
 ADD .profile /root/
 ADD start /
-ADD cron-hour /etc/perioderic/hourly
+ADD cron-hour /etc/periodic/hourly
 
-RUN chmod +x /etc/perioderic/hourly/cron-hour
+RUN chmod +x /etc/periodic/hourly/cron-hour
 
 # CMD ["/bin/sh", "-c", "'/usr/sbin/crond && /usr/sbin/sshd -D'"]
 # CMD ["/bin/sh", "-c", "'/usr/sbin/crond", "&&", "/usr/sbin/sshd", "-D'"]
