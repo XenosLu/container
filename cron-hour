@@ -1,2 +1,2 @@
 #!/bin/sh
-echo $date >> /root/cron.log
+echo $(date) >> /root/cron.log
