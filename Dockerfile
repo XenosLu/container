@@ -8,10 +8,12 @@ RUN apk add --no-cache \
             curl \
             git \
             vim \
+            tree \
             openssh-client \
             openssh-server\
             nethogs \
             tmux \
+            rsync \
             &&\
     apk add --no-cache \
             python3-dev \
