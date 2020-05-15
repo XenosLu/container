@@ -1,2 +1,3 @@
 #!/bin/sh
 echo $(date) >> /root/cron.log
+echo $onemirror >> /root/cron.log
