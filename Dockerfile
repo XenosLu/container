@@ -53,6 +53,6 @@ ADD .profile /root/
 
 
 # CMD ["/bin/sh", "-c", "'/usr/sbin/crond && /usr/sbin/sshd -D'"]
-CMD ["/bin/sh", "-c", "'/usr/sbin/crond", "&&", "/usr/sbin/sshd", "-D'"]
+# CMD ["/bin/sh", "-c", "'/usr/sbin/crond", "&&", "/usr/sbin/sshd", "-D'"]
 
-# CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/usr/sbin/sshd", "-D"]
