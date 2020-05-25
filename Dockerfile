@@ -55,8 +55,7 @@ ADD cron-hour /etc/periodic/hourly
 
 # RUN chmod +x /etc/periodic/hourly/cron-hour
 
-# CMD ["/bin/sh", "-c", "'/usr/sbin/crond && /usr/sbin/sshd -D'"]
-# CMD ["/bin/sh", "-c", "'/usr/sbin/crond", "&&", "/usr/sbin/sshd", "-D'"]
+
 
 # CMD ["/usr/sbin/sshd", "-D"]
 CMD ["/bin/sh", "/start"]
