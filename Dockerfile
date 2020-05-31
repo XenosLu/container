@@ -25,7 +25,7 @@ RUN apk add --no-cache \
     apk add --no-cache \
             nodejs \
             yarn &&\
-    # apk add xauth &&\
+    apk add --no-cache xauth &&\
     pip3 install docker-compose &&\
     rm -rf /root/.cache
 
