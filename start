@@ -1,3 +1,5 @@
 #!/bin/sh
+onemirror=/share/CACHEDEV1_DATA/Utilities/onemirror
+cp $onemirror/portal_sync /etc/periodic/15min
 /usr/sbin/crond
 /usr/sbin/sshd -D
