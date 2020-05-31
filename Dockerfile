@@ -58,8 +58,6 @@ ADD .profile /root/
 ADD start /
 ADD cron-hour /etc/periodic/hourly
 
-# RUN chmod +x /etc/periodic/hourly/cron-hour
-
 
 
 # CMD ["/usr/sbin/sshd", "-D"]
