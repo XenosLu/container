@@ -36,7 +36,8 @@ RUN wget https://ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz &&\
     make &&\
     make install &&\ 
     ln -s /usr/local/bin/lrz /usr/bin/rz &&\
-    ln -s /usr/local/bin/lsz /usr/bin/sz
+    ln -s /usr/local/bin/lsz /usr/bin/sz &&\
+    rm -rf lrzsz-0.12.20.tar.gz
 
 RUN ssh-keygen -A && \
     echo "root:$RANDOM" | chpasswd &&\
@@ -57,8 +58,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
 ADD .profile /root/
 ADD start /
 ADD cron-hour /etc/periodic/hourly
-
-
 
 # CMD ["/usr/sbin/sshd", "-D"]
 CMD ["/bin/sh", "/start"]
