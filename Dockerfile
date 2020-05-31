@@ -25,7 +25,6 @@ RUN apk add --no-cache \
     apk add --no-cache \
             nodejs \
             yarn &&\
-    apk add --no-cache xauth &&\
     pip3 install docker-compose &&\
     rm -rf /root/.cache
 
@@ -50,6 +49,8 @@ RUN ssh-keygen -A && \
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl &&\
     chmod +x ./kubectl &&\
     mv ./kubectl /usr/local/bin/kubectl
+
+RUN apk add --no-cache xauth
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 # RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
