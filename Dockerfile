@@ -43,7 +43,8 @@ RUN ssh-keygen -A && \
     sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config &&\
     sed -i s/X11Forwarding\ no/X11Forwarding\ yes/ /etc/ssh/sshd_config &&\
     sed -i s/AllowTcpForwarding\ no/AllowTcpForwarding\ yes/ /etc/ssh/sshd_config &&\
-    sed -i s/#GatewayPorts.*/GatewayPorts\ yes/ /etc/ssh/sshd_config &&\
+    # sed -i s/#GatewayPorts.*/GatewayPorts\ yes/ /etc/ssh/sshd_config &&\
+    sed -i s/#X11UseLocalhost.*/X11UseLocalhost\ yes/ /etc/ssh/sshd_config &&\
 	echo StrictHostKeyChecking no>> /etc/ssh/ssh_config
 
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl &&\
