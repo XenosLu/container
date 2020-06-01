@@ -18,7 +18,9 @@ RUN apt-get install -y docker.io
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config
 
-RUN apt-get install -y -q --no-install-recommends ubuntu-desktop
+# RUN apt-get install -y lightdm
+# RUN apt-get install -y -q --no-install-recommends ubuntu-desktop
+
 
 RUN sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
 
