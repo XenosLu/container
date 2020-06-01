@@ -1,2 +1,2 @@
-xenocider/container:ubuntu-desktop
-ubuntu desktop environment
+xenocider/container:elementary-desktop
+elementary desktop environment
