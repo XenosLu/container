@@ -6,9 +6,16 @@ COPY requirements.txt /
 
 RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
     apt-get update &&\
+    apt-get install -y --no-install-recommends ubuntu-desktop &&\
     apt-get install -y openssh-server\
-                       python3-pip \
-                       wget \
-    echo StrictHostKeyChecking no>> /etc/ssh/ssh_config
+                       firefox \
+                       xauth &&\
+RUN ssh-keygen -A && \
+    echo "root:$RANDOM" | chpasswd &&\
+    sed -i s/#\\?PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config &&\
+    sed -i s/X11Forwarding.*/X11Forwarding\ yes/ /etc/ssh/sshd_config &&\
+    sed -i s/AllowTcpForwarding.*/AllowTcpForwarding\ yes/ /etc/ssh/sshd_config &&\
+    sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
+	echo StrictHostKeyChecking no>> /etc/ssh/ssh_config
 
-CMD ["/bin/bash"]
+CMD ["/usr/sbin/sshd", "-D"]
