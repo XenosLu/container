@@ -1,5 +1,6 @@
 # xenocider/container:ubuntu-uam
-FROM ubuntu:18.04
+FROM elementary/docker:juno-stable
+
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
 ENV LANG="C.UTF-8"
 
