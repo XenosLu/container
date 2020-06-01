@@ -19,7 +19,7 @@ RUN apt-get install -y docker.io
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config
 
-# RUN apt-get install -y lightdm
+RUN apt-get install -y elementary-desktop
 # RUN apt-get install -y -q --no-install-recommends ubuntu-desktop
 
 
