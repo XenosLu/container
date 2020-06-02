@@ -48,7 +48,8 @@ RUN apt-get install -y fonts-arphic-ukai \
                        fonts-ubuntu
 
 RUN apt-get install -y gedit
-RUN apt-get install -y ubuntu-software
+# RUN apt-get install -y ubuntu-software
+RUN apt-get install -y synaptic
 
 ADD start /
 
