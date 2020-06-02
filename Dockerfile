@@ -23,9 +23,8 @@ RUN apt-get install -y x2goserver
 
 RUN apt-get install -y xfce4
 
-# RUN sed -i "s/mesg n || true/# mesg n || true\ntty -s && mesg n \|| true" /root/.profile
-# RUN sed -i "s/mesg n \|\| true/# mesg n \|\| true\ntty -s && mesg n \|\| true/" /root/.profile
-
+RUN sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile
+ 
 ADD start /
 RUN chmod +x /start
 
