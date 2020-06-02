@@ -19,11 +19,14 @@ RUN apt-get install -y docker.io
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config
 
-RUN apt-get install -y x2goserver
+
 
 RUN apt-get install -y xfce4
+# apt install firefox-locale-zh-hans
 # RUN apt-get install -y language-pack-zh-hans
 # RUN apt-get install -y language-pack-gnome-zh-hans
+
+# RUN apt-get install -y x2goserver
 
 RUN sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile
 
