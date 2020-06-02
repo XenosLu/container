@@ -47,6 +47,8 @@ RUN apt-get install -y fonts-arphic-ukai \
                        fonts-sil-padauk \
                        fonts-ubuntu
 
+RUN apt-get install -y gedit
+
 ADD start /
 
 RUN sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
