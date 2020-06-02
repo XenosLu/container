@@ -1,4 +1,6 @@
 #!/bin/sh
 mkdir -p /var/run/dbus
+ln -s /share/CACHEDEV1_DATA/ /root/Desktop/NAS
+
 dbus-daemon --system
 /usr/sbin/sshd -D
