@@ -21,7 +21,7 @@ RUN mkdir /run/sshd &&\
 
 RUN apt-get install -y x2goserver
 
-RUN apt-get install -y -q --no-install-recommends ubuntu-desktop
+RUN apt-get install -y xfce4
 
 # RUN sed -i "s/mesg n || true/# mesg n || true\ntty -s && mesg n \|| true" /root/.profile
 # RUN sed -i "s/mesg n \|\| true/# mesg n \|\| true\ntty -s && mesg n \|\| true/" /root/.profile
