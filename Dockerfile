@@ -28,10 +28,7 @@ RUN apt-get install -y xfce4
 RUN sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile
 
 ADD start /
-RUN chmod +x /start
 
 RUN sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
 
-# CMD ["/start"]
-# CMD ["/bin/sh", "/start"]
 CMD ["/bin/sh", "/start"]
