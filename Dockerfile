@@ -6,6 +6,8 @@ ENV LANG="C.UTF-8"
 
 ENV TZ 'Asia/Shanghai'
 
+# ENV DEBIAN_FRONTEND 'noninteractive'
+
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     echo $TZ > /etc/timezone
 
@@ -26,7 +28,7 @@ RUN apt-get install -y xfce4
 # RUN apt-get install -y language-pack-zh-hans
 # RUN apt-get install -y language-pack-gnome-zh-hans
 
-# RUN apt-get install -y x2goserver
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y x2goserver
 
 RUN sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile
 
