@@ -11,17 +11,18 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
 
 RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
     apt-get update &&\
-    apt-get install -y openssh-server\
+    apt-get install -y openssh-server \
+                       docker.io \
+                       vim \
+                       x2goserver \
+                       xfce4 \
+                       xfce4-terminal \
                        firefox
-                       
-RUN apt-get install -y docker.io
+
                        
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config
 
-RUN apt-get install -y x2goserver
-
-RUN apt-get install -y xfce4
 # RUN apt-get install -y language-pack-zh-hans
 # RUN apt-get install -y language-pack-gnome-zh-hans
 
