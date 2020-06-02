@@ -1,0 +1,4 @@
+#!/bin/sh
+mkdir -p /var/run/dbus
+dbus-daemon --system
+/usr/sbin/sshd -D

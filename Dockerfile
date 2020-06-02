@@ -23,7 +23,13 @@ RUN apt-get install -y x2goserver
 
 RUN apt-get install -y -q --no-install-recommends ubuntu-desktop
 
+# RUN sed -i "s/mesg n || true/# mesg n || true\ntty -s && mesg n \|| true" /root/.profile
+# RUN sed -i "s/mesg n \|\| true/# mesg n \|\| true\ntty -s && mesg n \|\| true/" /root/.profile
+
+ADD start /
+RUN chmod +x /start
 
 RUN sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
 
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/start"]
+# CMD ["/usr/sbin/sshd", "-D"]
