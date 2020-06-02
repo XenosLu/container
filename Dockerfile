@@ -25,6 +25,8 @@ RUN apt-get install -y xfce4
 # RUN apt-get install -y language-pack-zh-hans
 # RUN apt-get install -y language-pack-gnome-zh-hans
 
+RUN apt-get install -y fonts-arphic-ukai fonts-arphic-uming fonts-croscore fonts-droid-fallback  fonts-kacst fonts-kacst-one fonts-noto fonts-noto-cjk fonts-noto-color-emoji   fonts-noto-hinted fonts-noto-mono fonts-noto-unhinted fonts-open-sans fonts-opendyslexic fonts-roboto fonts-roboto-hinted fonts-sil-mondulkiri fonts-sil-padauk fonts-ubuntu
+
 RUN sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile
 
 ADD start /
