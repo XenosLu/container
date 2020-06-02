@@ -22,13 +22,14 @@ RUN mkdir /run/sshd &&\
 RUN apt-get install -y x2goserver
 
 RUN apt-get install -y xfce4
+RUN apt-get install -y language-pack-zh-hans
+RUN apt-get install -y language-pack-gnome-zh-hans
 
 RUN sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile
- 
+
 ADD start /
 RUN chmod +x /start
 
 RUN sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
 
-CMD ["/start"]
-# CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/bin/sh", "/start"]
