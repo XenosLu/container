@@ -10,15 +10,16 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     echo $TZ > /etc/timezone
 
 RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
-    apt-get update &&\
+    add-apt-repository -y ppa:mozillateam/ppa &&\
+    # apt-get update &&\
     apt-get install -y openssh-server \
                        docker.io \
                        vim \
                        x2goserver \
                        xfce4 \
                        xfce4-terminal \
-                       firefox
-
+                       firefox-esr \
+                       gedit
                        
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
@@ -47,7 +48,7 @@ RUN apt-get install -y fonts-arphic-ukai \
                        fonts-sil-padauk \
                        fonts-ubuntu
 
-RUN apt-get install -y gedit
+
 RUN apt-get install -y clementine
 RUN apt-get install -y mpv
 # RUN apt-get install -y ubuntu-software
