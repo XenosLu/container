@@ -40,7 +40,8 @@ RUN apt-get install -y fonts-arphic-ukai \
                        fonts-roboto-hinted \
                        fonts-sil-mondulkiri \
                        fonts-sil-padauk \
-                       fonts-ubuntu
+                       fonts-ubuntu &&\
+    apt-get clean
 
 # RUN apt-get install -y language-pack-zh-hans
 # RUN apt-get install -y language-pack-gnome-zh-hans
