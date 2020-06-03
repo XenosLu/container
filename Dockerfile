@@ -37,7 +37,6 @@ RUN wget https://ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz &&\
     ln -s /usr/local/bin/lsz /usr/bin/sz &&\
     rm -rf /lrzsz-0.12.20.tar.gz
 
-
 RUN ssh-keygen -A && \
     echo "root:$RANDOM" | chpasswd &&\
     sed -i s/#\\?PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config &&\
@@ -50,15 +49,10 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
     chmod +x ./kubectl &&\
     mv ./kubectl /usr/local/bin/kubectl
 
-RUN apk add --no-cache xauth
-# RUN pip3 install docker-compose
-
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 # RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
-ADD .profile /root/
 ADD start /
 ADD cron-hour /etc/periodic/hourly
 
-# CMD ["/usr/sbin/sshd", "-D"]
 CMD ["/bin/sh", "/start"]
