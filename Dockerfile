@@ -2,7 +2,7 @@
 FROM elementary/docker:juno-stable
 
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
-ENV LANG="C.UTF-8"
+ENV LANG "C.UTF-8"
 
 ENV TZ 'Asia/Shanghai'
 
@@ -19,7 +19,8 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
                        xfce4 \
                        xfce4-terminal \
                        firefox-esr \
-                       gedit
+                       gedit &&\
+    apt-get clean
 
 RUN apt-get install -y fonts-arphic-ukai \
                        fonts-arphic-uming \
