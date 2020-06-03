@@ -52,9 +52,8 @@ RUN apt-get install -y mpv
 
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
-    sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile
-
-RUN sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
+    sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile  &&\
+    sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
 
 ADD start /
 
