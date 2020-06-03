@@ -11,7 +11,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
 
 RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
     add-apt-repository -y ppa:mozillateam/ppa &&\
-    # apt-get update &&\
     apt-get install -y openssh-server \
                        docker.io \
                        vim \
@@ -48,12 +47,10 @@ RUN apt-get install -y fonts-arphic-ukai \
 
 RUN apt-get install -y clementine
 RUN apt-get install -y mpv
-# RUN apt-get install -y ubuntu-software
-# RUN apt-get install -y synaptic
 
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
-    sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile  &&\
+    # sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile  &&\
     sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
 
 ADD start /
