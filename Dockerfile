@@ -41,10 +41,6 @@ RUN apt-get install -y fonts-arphic-ukai \
                        fonts-sil-padauk \
                        fonts-ubuntu
 
-RUN mkdir /run/sshd &&\
-    sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
-    sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile
-
 # RUN apt-get install -y language-pack-zh-hans
 # RUN apt-get install -y language-pack-gnome-zh-hans
 
@@ -53,8 +49,12 @@ RUN apt-get install -y mpv
 # RUN apt-get install -y ubuntu-software
 # RUN apt-get install -y synaptic
 
-ADD start /
+RUN mkdir /run/sshd &&\
+    sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
+    sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile
 
 RUN sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
+
+ADD start /
 
 CMD ["/bin/sh", "/start"]
