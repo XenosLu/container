@@ -20,13 +20,6 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
                        xfce4-terminal \
                        firefox-esr \
                        gedit
-                       
-RUN mkdir /run/sshd &&\
-    sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
-    sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile
-
-# RUN apt-get install -y language-pack-zh-hans
-# RUN apt-get install -y language-pack-gnome-zh-hans
 
 RUN apt-get install -y fonts-arphic-ukai \
                        fonts-arphic-uming \
@@ -48,6 +41,12 @@ RUN apt-get install -y fonts-arphic-ukai \
                        fonts-sil-padauk \
                        fonts-ubuntu
 
+RUN mkdir /run/sshd &&\
+    sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
+    sed -i s/mesg/tty\ -s\ \\\&\\\&\ mesg/ /root/.profile
+
+# RUN apt-get install -y language-pack-zh-hans
+# RUN apt-get install -y language-pack-gnome-zh-hans
 
 RUN apt-get install -y clementine
 RUN apt-get install -y mpv
