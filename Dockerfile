@@ -35,7 +35,8 @@ RUN wget https://ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz &&\
     make install &&\ 
     ln -s /usr/local/bin/lrz /usr/bin/rz &&\
     ln -s /usr/local/bin/lsz /usr/bin/sz &&\
-    rm -rf lrzsz-0.12.20.tar.gz
+    rm -rf /lrzsz-0.12.20.tar.gz
+
 
 RUN ssh-keygen -A && \
     echo "root:$RANDOM" | chpasswd &&\
