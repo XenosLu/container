@@ -49,7 +49,7 @@ RUN apt-get install -y fonts-arphic-ukai \
 
 RUN apt-get install -y clementine
 RUN apt-get install -y mpv
-# RUN apt-get install -y wine-stable
+
 
 RUN dpkg --add-architecture i386 &&\
     wget -nc https://dl.winehq.org/wine-builds/winehq.key &&\
@@ -59,11 +59,16 @@ RUN dpkg --add-architecture i386 &&\
     apt-get update &&\
     apt-get install -y --install-recommends winehq-staging
 
-# dpkg --add-architecture i386 && apt-get update && apt-get install wine32
+RUN apt-get install -y apt-get install -y fcitx fcitx-pinyin
+
 
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
     sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
+
+ENV GTK_IM_MODULE fcitx
+ENV QT_IM_MODULE fcitx
+ENV XMODIFIERS "@im=fcitx"
 
 ADD start /
 
