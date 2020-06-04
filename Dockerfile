@@ -47,10 +47,9 @@ RUN apt-get install -y fonts-arphic-ukai \
 
 # RUN apt-get install -y language-pack-zh-hans
 # RUN apt-get install -y language-pack-gnome-zh-hans
-
-#RUN apt-get install -y clementine
-#RUN apt-get install -y mpv
-#RUN apt-get install -y                        x2goserver 
+# RUN apt-get install -y clementine
+# RUN apt-get install -y mpv
+# RUN apt-get install -y x2goserver 
 # RUN DEBIAN_FRONTEND=noninteractive apt-get install -y x2goserver
 
 RUN mkdir /run/sshd &&\
