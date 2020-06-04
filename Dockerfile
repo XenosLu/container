@@ -56,8 +56,8 @@ RUN dpkg --add-architecture i386 &&\
     apt-key add winehq.key &&\
     apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' &&\
     add-apt-repository ppa:cybermax-dexter/sdl2-backport &&\
-    apt update &&\
-    apt install --install-recommends winehq-stable
+    apt-get update &&\
+    apt-get install -y --install-recommends winehq-stable
 
 # dpkg --add-architecture i386 && apt-get update && apt-get install wine32
 
