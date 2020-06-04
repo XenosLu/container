@@ -12,7 +12,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
 
 RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
     apt-get update &&\
-    apt-get install software-properties-common &&\
+    apt-get install -y software-properties-common &&\
     add-apt-repository -y ppa:mozillateam/ppa &&\
     apt-get install -y openssh-server \
                        docker.io \
