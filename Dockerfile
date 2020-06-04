@@ -51,6 +51,14 @@ RUN apt-get install -y clementine
 RUN apt-get install -y mpv
 # RUN apt-get install -y wine-stable
 
+RUN dpkg --add-architecture i386 &&\
+    wget -nc https://dl.winehq.org/wine-builds/winehq.key &&\
+    apt-key add winehq.key &&\
+    apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' &&\
+    add-apt-repository ppa:cybermax-dexter/sdl2-backport &&\
+    apt update &&\
+    apt install --install-recommends winehq-stable
+
 # dpkg --add-architecture i386 && apt-get update && apt-get install wine32
 
 RUN mkdir /run/sshd &&\
