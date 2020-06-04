@@ -49,8 +49,9 @@ RUN apt-get install -y fonts-arphic-ukai \
 
 RUN apt-get install -y clementine
 RUN apt-get install -y mpv
-RUN apt-get install -y wine-stable
+# RUN apt-get install -y wine-stable
 
+# dpkg --add-architecture i386 && apt-get update && apt-get install wine32
 
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
