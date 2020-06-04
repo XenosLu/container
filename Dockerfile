@@ -59,7 +59,7 @@ RUN dpkg --add-architecture i386 &&\
     apt-get update &&\
     apt-get install -y --install-recommends winehq-staging
 
-RUN apt-get install -y apt-get install -y fcitx fcitx-pinyin
+RUN apt-get install -y fcitx fcitx-pinyin
 
 
 RUN mkdir /run/sshd &&\
