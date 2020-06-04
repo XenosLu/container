@@ -1,6 +1,5 @@
 # xenocider/container:ubuntu-uam
 FROM ubuntu:18.04
-
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
 ENV LANG "C.UTF-8"
 
