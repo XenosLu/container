@@ -52,6 +52,8 @@ RUN apt-get install -y fonts-arphic-ukai \
 # RUN apt-get install -y x2goserver 
 # RUN DEBIAN_FRONTEND=noninteractive apt-get install -y x2goserver
 
+RUN apt-get install -y keyboard-configuration
+
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
     sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
