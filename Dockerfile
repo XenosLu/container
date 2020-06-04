@@ -46,9 +46,10 @@ RUN apt-get install -y fonts-arphic-ukai \
     apt-get clean
 
 # RUN apt-get install -y language-pack-zh-hans
-# RUN apt-get install -y language-pack-gnome-zh-hans
+
 RUN apt-get install -y clementine
 RUN apt-get install -y mpv
+RUN apt-get install -y wine-stable
 
 
 RUN mkdir /run/sshd &&\
