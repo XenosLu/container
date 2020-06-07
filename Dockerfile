@@ -8,9 +8,7 @@ ENV TZ 'Asia/Shanghai'
 ENV DEBIAN_FRONTEND 'noninteractive'
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
-    echo $TZ > /etc/timezone
-
-RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
+    echo $TZ > /etc/timezone &&\
     apt-get update &&\
     apt-get install -y software-properties-common &&\
     add-apt-repository -y ppa:mozillateam/ppa &&\
