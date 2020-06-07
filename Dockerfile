@@ -21,7 +21,11 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
                        xfce4 \
                        xfce4-terminal \
                        firefox-esr \
+                       rdesktop \
                        gedit &&\
+    apt-get install -y fcitx fcitx-pinyin &&\
+    apt-get purge -y fcitx-module-dbus &&\
+    apt-get autoremove -y &&\
     apt-get clean
 
 RUN apt-get install -y fonts-arphic-ukai \
@@ -48,7 +52,7 @@ RUN apt-get install -y fonts-arphic-ukai \
 # RUN apt-get install -y language-pack-zh-hans
 
 RUN apt-get install -y clementine
-RUN apt-get install -y mpv
+# RUN apt-get install -y mpv
 
 
 RUN dpkg --add-architecture i386 &&\
@@ -58,11 +62,6 @@ RUN dpkg --add-architecture i386 &&\
     add-apt-repository ppa:cybermax-dexter/sdl2-backport &&\
     apt-get update &&\
     apt-get install -y --install-recommends winehq-staging
-
-RUN apt-get install -y fcitx fcitx-pinyin
-RUN apt-get purge -y fcitx-module-dbus
-
-RUN apt-get install -y rdesktop
 
 
 RUN mkdir /run/sshd &&\
