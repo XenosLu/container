@@ -25,7 +25,7 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
                        gedit &&\
     apt-get install -y fcitx fcitx-pinyin &&\
     apt-get purge -y fcitx-module-dbus &&\
-    apt-get autoremove -y &&\
+    # apt-get autoremove -y &&\
     apt-get clean
 
 RUN apt-get install -y fonts-arphic-ukai \
