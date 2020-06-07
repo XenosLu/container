@@ -24,7 +24,7 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
                        rdesktop \
                        gedit &&\
     apt-get install -y fcitx fcitx-pinyin &&\
-    apt-get purge -y fcitx-module-dbus &&\
+    # apt-get purge -y fcitx-module-dbus &&\
     # apt-get autoremove -y &&\
     apt-get clean
 
