@@ -60,6 +60,7 @@ RUN dpkg --add-architecture i386 &&\
     apt-get install -y --install-recommends winehq-staging
 
 RUN apt-get install -y fcitx fcitx-pinyin
+RUN apt-get install -y rdesktop
 
 
 RUN mkdir /run/sshd &&\
