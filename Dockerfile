@@ -64,9 +64,9 @@ RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
     sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
 
-ENV GTK_IM_MODULE fcitx
-ENV QT_IM_MODULE fcitx
-ENV XMODIFIERS "@im=fcitx"
+# ENV GTK_IM_MODULE fcitx
+# ENV QT_IM_MODULE fcitx
+# ENV XMODIFIERS "@im=fcitx"
 
 ADD start /
 
