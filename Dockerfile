@@ -20,11 +20,10 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
                        xfce4-terminal \
                        firefox-esr \
                        rdesktop \
-                       gedit &&\
-    apt-get install -y fcitx fcitx-pinyin &&\
-    # apt-get purge -y fcitx-module-dbus &&\
-    # apt-get autoremove -y &&\
-    apt-get install -y fonts-arphic-ukai \
+                       fcitx \
+                       fcitx-pinyin \
+                       gedit \
+                       fonts-arphic-ukai \
                        fonts-arphic-uming \
                        fonts-croscore \
                        fonts-droid-fallback \
@@ -45,11 +44,10 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
                        fonts-ubuntu &&\
     apt-get clean
 
-# RUN apt-get install -y language-pack-zh-hans
-
 RUN apt-get install -y clementine
 RUN apt-get install -y mpv
 
+# RUN apt-get install -y language-pack-zh-hans
 
 RUN dpkg --add-architecture i386 &&\
     wget -nc https://dl.winehq.org/wine-builds/winehq.key &&\
@@ -63,10 +61,6 @@ RUN dpkg --add-architecture i386 &&\
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
     sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
-
-# ENV GTK_IM_MODULE fcitx
-# ENV QT_IM_MODULE fcitx
-# ENV XMODIFIERS "@im=fcitx"
 
 ADD start /
 
