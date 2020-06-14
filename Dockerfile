@@ -1,4 +1,4 @@
-# python 3.7.7 environment
+# python 3.8.3 environment
 FROM alpine:3.12
 LABEL maintainer="xenos <xenos.lu@gmail.com>"
 
