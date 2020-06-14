@@ -55,6 +55,5 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
 # RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 ADD start /
-ADD cron-hour /etc/periodic/hourly
 
 CMD ["/bin/sh", "/start"]
