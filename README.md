@@ -1,4 +1,4 @@
 ## xenocider/container:docker
-alpine3.10
-python3.7.5
+alpine3.12
+python3.8.3
 nodejs
