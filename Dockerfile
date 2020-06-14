@@ -38,7 +38,7 @@ RUN wget https://ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz &&\
     rm -rf /lrzsz-0.12.20.tar.gz
 
 RUN ssh-keygen -A && \
-    echo "root:$RANDOM" | chpasswd &&\
+    # echo "root:$RANDOM" | chpasswd &&\
     sed -i s/#\\?PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config &&\
     sed -i s/#\\?#PasswordAuthentication.*/PasswordAuthentication\ no/ /etc/ssh/sshd_config &&\
     sed -i s/X11Forwarding.*/X11Forwarding\ yes/ /etc/ssh/sshd_config &&\
@@ -49,9 +49,6 @@ RUN ssh-keygen -A && \
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl &&\
     chmod +x ./kubectl &&\
     mv ./kubectl /usr/local/bin/kubectl
-
-# RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
-# RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 ADD start /
 
