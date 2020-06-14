@@ -8,9 +8,9 @@ ENV TZ 'Asia/Shanghai'
 RUN apk add --no-cache \
             tzdata \
             python3 &&\
-    pip3 install --upgrade pip==20.0.2 &&\
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     echo $TZ > /etc/timezone &&\
+    pip3 install --upgrade pip==20.1.1 &&\
     rm -rf /root/.cache
 
 CMD ["/bin/sh"]
