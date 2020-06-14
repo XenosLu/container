@@ -38,7 +38,7 @@ RUN wget https://ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz &&\
     rm -rf /lrzsz-0.12.20.tar.gz
 
 RUN ssh-keygen -A && \
-    # echo "root:$RANDOM" | chpasswd &&\
+    echo "root:$RANDOM" | chpasswd &&\
     sed -i s/#\\?PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config &&\
     sed -i s/#\\?#PasswordAuthentication.*/PasswordAuthentication\ no/ /etc/ssh/sshd_config &&\
     sed -i s/X11Forwarding.*/X11Forwarding\ yes/ /etc/ssh/sshd_config &&\
