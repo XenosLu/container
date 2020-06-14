@@ -1,5 +1,0 @@
-#!/bin/sh
-onemirror=/share/CACHEDEV1_DATA/Utilities/onemirror
-
-date "+%Y-%m-%d %H:%M" >> $onemirror/sync.log
-$onemirror/sync >> $onemirror/sync.log
