@@ -44,8 +44,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
                        fonts-ubuntu &&\
     apt-get clean
 
-RUN apt-get install -y clementine
+# RUN apt-get install -y clementine
 RUN apt-get install -y mpv
+# RUN apt-get install -y epiphany-browser
 
 # RUN apt-get install -y language-pack-zh-hans
 
