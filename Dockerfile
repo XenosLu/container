@@ -10,8 +10,6 @@ ENV DEBIAN_FRONTEND 'noninteractive'
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     echo $TZ > /etc/timezone &&\
     apt-get update &&\
-    # apt-get install -y software-properties-common &&\
-    # add-apt-repository -y ppa:mozillateam/ppa &&\
     apt-get install -y openssh-server \
                        docker.io \
                        vim \
@@ -47,8 +45,13 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
 # RUN apt-get install -y clementine
 RUN apt-get install -y mpv
 RUN apt-get install -y epiphany-browser
-RUN apt-get install -y kodi
 
+RUN apt-get install -y software-properties-common &&\
+    add-apt-repository -y ppa:team-xbmc/ppa
+
+RUN apt-get install -y kodi
+    # apt-get install -y software-properties-common &&\
+    # add-apt-repository -y ppa:mozillateam/ppa &&\
 # RUN apt-get install -y language-pack-zh-hans
 
 # RUN dpkg --add-architecture i386 &&\
