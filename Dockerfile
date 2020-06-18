@@ -66,5 +66,6 @@ RUN mkdir /run/sshd &&\
     sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
 
 ADD start /
+ADD startkodi /
 
 CMD ["/bin/sh", "/start"]
