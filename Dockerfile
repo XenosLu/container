@@ -51,13 +51,13 @@ RUN apt-get install -y kodi
 
 # RUN apt-get install -y language-pack-zh-hans
 
-RUN dpkg --add-architecture i386 &&\
-    wget -nc https://dl.winehq.org/wine-builds/winehq.key &&\
-    apt-key add winehq.key &&\
-    apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' &&\
-    add-apt-repository ppa:cybermax-dexter/sdl2-backport &&\
-    apt-get update &&\
-    apt-get install -y --install-recommends winehq-staging
+# RUN dpkg --add-architecture i386 &&\
+#     wget -nc https://dl.winehq.org/wine-builds/winehq.key &&\
+#     apt-key add winehq.key &&\
+#     apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' &&\
+#     add-apt-repository ppa:cybermax-dexter/sdl2-backport &&\
+#     apt-get update &&\
+#     apt-get install -y --install-recommends winehq-staging
 
 
 RUN mkdir /run/sshd &&\
