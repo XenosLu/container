@@ -46,7 +46,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
 
 # RUN apt-get install -y clementine
 RUN apt-get install -y mpv
-# RUN apt-get install -y epiphany-browser
+RUN apt-get install -y epiphany-browser
+RUN apt-get install -y chromium-browser
+RUN apt-get install -y kodi
 
 # RUN apt-get install -y language-pack-zh-hans
 
