@@ -10,15 +10,15 @@ ENV DEBIAN_FRONTEND 'noninteractive'
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     echo $TZ > /etc/timezone &&\
     apt-get update &&\
-    apt-get install -y software-properties-common &&\
-    add-apt-repository -y ppa:mozillateam/ppa &&\
+    # apt-get install -y software-properties-common &&\
+    # add-apt-repository -y ppa:mozillateam/ppa &&\
     apt-get install -y openssh-server \
                        docker.io \
                        vim \
                        x2goserver \
                        xfce4 \
                        xfce4-terminal \
-                       firefox-esr \
+                       # firefox-esr \
                        rdesktop \
                        fcitx \
                        fcitx-pinyin \
