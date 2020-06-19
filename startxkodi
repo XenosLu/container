@@ -1,6 +1,6 @@
 #!/bin/sh
-mkdir -p /var/run/dbus
-/usr/bin/X :0 &
+# mkdir -p /var/run/dbus
+test -d /tmp/.X11-unix || /usr/bin/X :0 &
 
 /usr/bin/dbus-daemon --system
 
