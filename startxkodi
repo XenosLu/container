@@ -1,5 +1,8 @@
 #!/bin/sh
 mkdir -p /var/run/dbus
 /usr/bin/X :0 &
+
 /usr/bin/dbus-daemon --system
+
+export DISPLAY=:0.0
 /usr/bin/kodi
