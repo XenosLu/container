@@ -42,7 +42,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
                        fonts-ubuntu &&\
     apt-get clean
 
-# RUN apt-get install -y clementine
+
 RUN apt-get install -y mpv
 RUN apt-get install -y epiphany-browser
 
@@ -50,9 +50,11 @@ RUN apt-get install -y software-properties-common &&\
     add-apt-repository -y ppa:team-xbmc/ppa
 
 RUN apt-get install -y kodi
+
+# RUN apt-get install -y clementine
+
     # apt-get install -y software-properties-common &&\
     # add-apt-repository -y ppa:mozillateam/ppa &&\
-# RUN apt-get install -y language-pack-zh-hans
 
 # RUN dpkg --add-architecture i386 &&\
 #     wget -nc https://dl.winehq.org/wine-builds/winehq.key &&\
