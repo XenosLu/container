@@ -65,9 +65,11 @@ RUN apt-get install -y kodi
 
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
+    mkdir -p /var/run/dbus &&\
     sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
 
 ADD start /
 ADD startkodi /
+ADD startxkodi /
 
 CMD ["/bin/sh", "/start"]

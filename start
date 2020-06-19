@@ -7,5 +7,5 @@ echo TriggerKey=CTRL_ALT_SPACE >> /root/.config/fcitx/config
 echo SwitchKey=Disabled >> /root/.config/fcitx/config
 echo IMSwitchKey=False >> /root/.config/fcitx/config
 
-dbus-daemon --system
+/usr/bin/dbus-daemon --system
 /usr/sbin/sshd -D
