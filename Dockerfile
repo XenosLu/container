@@ -47,23 +47,13 @@ RUN apt-get install -y mpv
 RUN apt-get install -y epiphany-browser
 
 RUN apt-get install -y software-properties-common &&\
-    add-apt-repository -y ppa:team-xbmc/ppa
-
-RUN apt-get install -y kodi
+    add-apt-repository -y ppa:team-xbmc/ppa &&\
+    apt-get install -y kodi
 
 # RUN apt-get install -y clementine
 
-    # apt-get install -y software-properties-common &&\
-    # add-apt-repository -y ppa:mozillateam/ppa &&\
-
-# RUN dpkg --add-architecture i386 &&\
-#     wget -nc https://dl.winehq.org/wine-builds/winehq.key &&\
-#     apt-key add winehq.key &&\
-#     apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' &&\
-#     add-apt-repository ppa:cybermax-dexter/sdl2-backport &&\
-#     apt-get update &&\
-#     apt-get install -y --install-recommends winehq-staging
-
+# apt-get install -y software-properties-common &&\
+# add-apt-repository -y ppa:mozillateam/ppa &&\
 
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
