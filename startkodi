@@ -4,4 +4,5 @@ export DISPLAY=:0.0
 /usr/bin/dbus-daemon --system
 sleep 1
 xset dpms 0 0 0
+xset s 0 0
 /usr/bin/kodi
