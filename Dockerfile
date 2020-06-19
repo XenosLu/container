@@ -62,6 +62,5 @@ RUN mkdir /run/sshd &&\
 
 ADD start /
 ADD startkodi /
-ADD startxkodi /
 
 CMD ["/bin/sh", "/start"]
