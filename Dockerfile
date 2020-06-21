@@ -50,6 +50,9 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
     chmod +x ./kubectl &&\
     mv ./kubectl /usr/local/bin/kubectl
 
+RUN pip3 install python-crontab
+
+
 ADD start /
 
 CMD ["/bin/sh", "/start"]
