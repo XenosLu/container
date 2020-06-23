@@ -1,2 +1,2 @@
-xenocider/container:ubuntu-desktop
-ubuntu desktop environment
+xenocider/container:kodi
+KODI player with X11
