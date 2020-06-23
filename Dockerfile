@@ -14,6 +14,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     add-apt-repository -y ppa:team-xbmc/ppa &&\
     apt-get install -y kodi &&\
     apt-get install -y --no-install-recommends xorg &&\
+    apt-get install -y xserver-xorg-video-fbdev &&\
+    apt-get install -y xserver-xorg-video-vesa &&\
     apt-get clean
 
 RUN apt-get install -y tigervnc-scraping-server &&\
