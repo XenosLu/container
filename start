@@ -4,4 +4,6 @@ test -f /var/run/dbus/pid && rm /var/run/dbus/pid
 
 export DISPLAY=:0.0
 /usr/bin/dbus-daemon --system
+x0vncserver display=':0.0' -securitytypes none &
+websockify --web /usr/share/novnc 9000 localhost:5900 &
 /usr/bin/kodi

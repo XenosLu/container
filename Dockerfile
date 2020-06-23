@@ -16,6 +16,10 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     apt-get install -y --no-install-recommends xorg &&\
     apt-get clean
 
+RUN apt-get install -y tigervnc-scraping-server &&\
+    apt-get install -y novnc &&\
+    apt-get clean
+
 RUN mkdir -p /var/run/dbus &&\
     sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
 
