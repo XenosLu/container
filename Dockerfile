@@ -13,7 +13,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     apt-get install -y software-properties-common &&\
     add-apt-repository -y ppa:team-xbmc/ppa &&\
     apt-get install -y kodi &&\
-    apt-get install -y xorg &&\
+    apt-get install -y --no-install-recommends xorg &&\
     apt-get clean
 
 RUN mkdir -p /var/run/dbus &&\
