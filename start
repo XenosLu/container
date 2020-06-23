@@ -1,11 +1,7 @@
 #!/bin/sh
+test -d /tmp/.X11-unix || /usr/bin/X :0 &
 test -f /var/run/dbus/pid && rm /var/run/dbus/pid
 
-mkdir -p /root/.config/fcitx
-echo [Hotkey] > /root/.config/fcitx/config
-echo TriggerKey=CTRL_ALT_SPACE >> /root/.config/fcitx/config
-echo SwitchKey=Disabled >> /root/.config/fcitx/config
-echo IMSwitchKey=False >> /root/.config/fcitx/config
-
+export DISPLAY=:0.0
 /usr/bin/dbus-daemon --system
-/usr/sbin/sshd -D
+/usr/bin/kodi
