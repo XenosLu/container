@@ -1,4 +1,5 @@
 #!/bin/sh
+test -f /var/run/dbus/pid && rm /var/run/dbus/pid
 
 mkdir -p /root/.config/fcitx
 echo [Hotkey] > /root/.config/fcitx/config

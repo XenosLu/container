@@ -1,5 +1,7 @@
 #!/bin/sh
 test -d /tmp/.X11-unix || /usr/bin/X :0 &
+test -f /var/run/dbus/pid && rm /var/run/dbus/pid
+
 export DISPLAY=:0.0
 /usr/bin/dbus-daemon --system
 /usr/bin/kodi
