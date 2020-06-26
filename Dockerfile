@@ -10,13 +10,12 @@ ENV DEBIAN_FRONTEND 'noninteractive'
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     echo $TZ > /etc/timezone &&\
     apt-get update &&\
-    apt-get install xfce4 &&\
+    apt-get install -y --no-install-recommends xfce4 &&\
     apt-get install -y openssh-server \
                        docker.io \
                        vim \
                        x2goserver \
                        xfce4-terminal \
-                       # firefox-esr \
                        rdesktop \
                        fcitx \
                        fcitx-pinyin \
@@ -42,13 +41,12 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
                        fonts-ubuntu &&\
     apt-get clean
 
-
 RUN apt-get install -y mpv
 RUN apt-get install -y epiphany-browser
 
-
 # apt-get install -y software-properties-common &&\
 # add-apt-repository -y ppa:mozillateam/ppa &&\
+# apt-get install -y  firefox-esr
 
 RUN mkdir /run/sshd &&\
     sed -i s/#\\?X11UseLocalhost.*/X11UseLocalhost\ no/ /etc/ssh/sshd_config &&\
