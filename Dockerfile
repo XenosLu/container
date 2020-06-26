@@ -14,6 +14,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     apt-get install -y xubuntu-icon-theme \
                        greybird-gtk-theme&&\
     apt-get install -y --no-install-recommends x2goserver &&\
+    apt-get install -y x2goserver-fmbindings &&\
     apt-get install -y openssh-server \
                        docker.io \
                        vim \
