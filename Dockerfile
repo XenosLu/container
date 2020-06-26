@@ -46,6 +46,12 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
 RUN apt-get install -y mpv
 RUN apt-get install -y epiphany-browser
 
+RUN apt-get update &&\
+    apt-get install -y software-properties-common &&\
+    add-apt-repository -y ppa:team-xbmc/ppa &&\
+    apt-get install -y kodi \
+                       kodi-pvr-iptvsimple &&\
+
 # apt-get install -y software-properties-common &&\
 # add-apt-repository -y ppa:mozillateam/ppa &&\
 # apt-get install -y  firefox-esr
