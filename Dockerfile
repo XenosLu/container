@@ -11,10 +11,10 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     echo $TZ > /etc/timezone &&\
     apt-get update &&\
     apt-get install -y --no-install-recommends xfce4 &&\
+    apt-get install -y --no-install-recommends x2goserver &&\
     apt-get install -y openssh-server \
                        docker.io \
                        vim \
-                       x2goserver \
                        xfce4-terminal \
                        rdesktop \
                        fcitx \
