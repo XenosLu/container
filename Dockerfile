@@ -53,8 +53,6 @@ RUN mkdir /run/sshd &&\
     mkdir -p /var/run/dbus &&\
     sed -i "s/^\(deb.*http:\/\/\).*\(\/ubuntu\)/\1mirrors.163.com\2/g" /etc/apt/sources.list
 
-ADD xorg.conf /etc/X11/
 ADD start /
-ADD startkodi /
 
 CMD ["/bin/sh", "/start"]
