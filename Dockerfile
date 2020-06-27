@@ -47,10 +47,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
 RUN apt-get install -y mpv
 RUN apt-get install -y epiphany-browser
 
-RUN apt-get install -y  desktop-file-utils \
+RUN apt-get install -y  sshfs
+# desktop-file-utils \
     # gvfs \
-    # gvfs-daemons \
-    sshfs \
     # udisks2
 
 # RUN apt-get update &&\
