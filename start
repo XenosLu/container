@@ -2,4 +2,4 @@
 # test -f /root/init.sh && sh /root/init.sh
 test -f /root/scripts/workspace_init.sh && sh /root/scripts/workspace_init.sh
 /usr/sbin/crond
-/usr/sbin/sshd -D
+/usr/sbin/sshd -D -E /var/log/sshd
