@@ -15,6 +15,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
         xfce4
 
 RUN apt-get install -y --no-install-recommends \
+        gvfs
+RUN apt-get install -y --no-install-recommends \
         openssh-server
 RUN apt-get install -y --no-install-recommends \
         sshfs
