@@ -12,15 +12,18 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     apt-get update &&\
     apt-get install -y --no-install-recommends \
         x2goserver \
-        xfce4 &&\
-    apt-get install -y \
-        sshfs \
+        xfce4
+
+RUN apt-get install -y --no-install-recommends \
+        openssh-server
+RUN apt-get install -y --no-install-recommends \
+        sshfs
+RUN apt-get install -y \
         x2goserver-fmbindings \
         xubuntu-icon-theme \
         greybird-gtk-theme \
         xfce4-terminal &&\
     apt-get install -y \
-        openssh-server \
         docker.io \
         vim \
         rdesktop \
