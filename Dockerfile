@@ -10,6 +10,7 @@ RUN apk add --no-cache \
             tree \
             openssh-client \
             openssh-server\
+            openssh-sftp-server \
             nethogs \
             tmux \
             rsync \
