@@ -4,7 +4,6 @@ LABEL maintainer="xenos <xenos.lu@gmail.com>"
 
 RUN apk add --no-cache \
             docker-cli \
-            # docker \
             curl \
             git \
             vim \
