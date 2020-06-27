@@ -13,22 +13,27 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
     apt-get install -y --no-install-recommends \
         x2goserver \
         xfce4 \
-        gvfs
+        gvfs \
+        sshfs
 
 RUN apt-get install -y --no-install-recommends \
-        sshfs
+    x2goserver-fmbindings
+RUN apt-get install -y --no-install-recommends \
+    xubuntu-icon-theme
+RUN apt-get install -y --no-install-recommends \
+    greybird-gtk-theme
+RUN apt-get install -y --no-install-recommends \
+    xfce4-terminal
+RUN apt-get install -y --no-install-recommends \
+    docker.io
+RUN apt-get install -y --no-install-recommends \
+    rdesktop
+RUN apt-get install -y --no-install-recommends \
+    gedit
 RUN apt-get install -y \
-        x2goserver-fmbindings \
-        xubuntu-icon-theme \
-        greybird-gtk-theme \
-        xfce4-terminal &&\
-    apt-get install -y \
-        docker.io \
         vim \
-        rdesktop \
         fcitx \
-        fcitx-pinyin \
-        gedit &&\
+        fcitx-pinyin &&\
     apt-get clean
 
 RUN apt-get install -y mpv
