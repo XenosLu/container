@@ -12,10 +12,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
         x2goserver \
         xfce4 \
         gvfs \
-        sshfs
+        sshfs \
+        x2goserver-fmbindings
 
-RUN apt-get install -y --no-install-recommends \
-    x2goserver-fmbindings
 RUN apt-get install -y --no-install-recommends \
     xubuntu-icon-theme
 RUN apt-get install -y --no-install-recommends \
