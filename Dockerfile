@@ -48,11 +48,10 @@ RUN apt-get install -y mpv
 RUN apt-get install -y epiphany-browser
 
 RUN apt-get install -y  desktop-file-utils \
-    gvfs \
-    gvfs-daemons \
+    # gvfs \
+    # gvfs-daemons \
     sshfs \
-    # udisks2 \
-    x2goserver-fmbindings
+    # udisks2
 
 # RUN apt-get update &&\
 #     apt-get install -y software-properties-common &&\
