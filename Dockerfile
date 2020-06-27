@@ -13,25 +13,25 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
         xfce4 \
         gvfs \
         sshfs \
-        x2goserver-fmbindings
-
-RUN apt-get install -y --no-install-recommends \
-    xubuntu-icon-theme
-RUN apt-get install -y --no-install-recommends \
-    greybird-gtk-theme
-RUN apt-get install -y --no-install-recommends \
-    xfce4-terminal
+        x2goserver-fmbindings  \
+        xubuntu-icon-theme \
+        greybird-gtk-theme \
+        xfce4-terminal
 RUN apt-get install -y --no-install-recommends \
     docker.io
 RUN apt-get install -y --no-install-recommends \
     rdesktop
 RUN apt-get install -y --no-install-recommends \
     gedit
-RUN apt-get install -y \
-        vim \
-        fcitx \
-        fcitx-pinyin &&\
-    apt-get clean
+RUN apt-get install -y --no-install-recommends \
+    vim
+RUN apt-get install -y --no-install-recommends \
+    fcitx fcitx-pinyin
+#RUN apt-get install -y \
+#        vim \
+#        fcitx \
+#        fcitx-pinyin &&\
+#    apt-get clean
 
 RUN apt-get install -y mpv
 RUN apt-get install -y epiphany-browser
