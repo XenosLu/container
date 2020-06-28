@@ -33,6 +33,8 @@ RUN apt-get install -y --no-install-recommends \
     mpv
 RUN apt-get install -y --no-install-recommends \
     epiphany-browser
+RUN apt-get install -y --no-install-recommends \
+    tmux
 
 #RUN apt-get install -y \
 #        vim \
