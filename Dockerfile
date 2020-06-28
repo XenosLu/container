@@ -16,9 +16,11 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
         x2goserver-fmbindings  \
         xubuntu-icon-theme \
         greybird-gtk-theme \
-        xfce4-terminal
-RUN apt-get install -y --no-install-recommends \
-    docker.io
+        xfce4-terminal \
+        docker.io
+
+
+
 RUN apt-get install -y --no-install-recommends \
     rdesktop
 RUN apt-get install -y --no-install-recommends \
@@ -27,14 +29,18 @@ RUN apt-get install -y --no-install-recommends \
     vim
 RUN apt-get install -y --no-install-recommends \
     fcitx fcitx-pinyin
+RUN apt-get install -y --no-install-recommends \
+    mpv
+RUN apt-get install -y --no-install-recommends \
+    epiphany-browser
+
 #RUN apt-get install -y \
 #        vim \
 #        fcitx \
 #        fcitx-pinyin &&\
 #    apt-get clean
 
-RUN apt-get install -y mpv
-RUN apt-get install -y epiphany-browser
+
 
 RUN  apt-get install -y \
         fonts-arphic-ukai \
