@@ -17,31 +17,25 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
         xubuntu-icon-theme \
         greybird-gtk-theme \
         xfce4-terminal \
-        docker.io
-
-
+        docker.io \
+        vim \
+        tmux
 
 RUN apt-get install -y --no-install-recommends \
     rdesktop
 RUN apt-get install -y --no-install-recommends \
     gedit
 RUN apt-get install -y --no-install-recommends \
-    vim
-RUN apt-get install -y --no-install-recommends \
     fcitx fcitx-pinyin
 RUN apt-get install -y --no-install-recommends \
     mpv
 RUN apt-get install -y --no-install-recommends \
     epiphany-browser
-RUN apt-get install -y --no-install-recommends \
-    tmux
 
 #RUN apt-get install -y \
-#        vim \
 #        fcitx \
 #        fcitx-pinyin &&\
 #    apt-get clean
-
 
 
 RUN  apt-get install -y \
