@@ -33,11 +33,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
 RUN apt-get install -y --no-install-recommends \
     epiphany-browser
 
-#RUN apt-get install -y \
-#        fcitx \
-#        fcitx-pinyin &&\
-#    apt-get clean
-
 
 RUN  apt-get install -y \
         fonts-arphic-ukai \
