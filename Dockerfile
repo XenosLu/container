@@ -22,10 +22,14 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
         tmux \
         rdesktop \
         gedit \
-        mpv
+        mpv &&\
+    apt-get install -y --no-install-recommends \
+        fcitx \
+        fcitx-pinyin \
+        fcitx-ui-classic \
+        fcitx-frontend-gtk3 \
+        fcitx-config-gtk
 
-RUN apt-get install -y --no-install-recommends \
-    fcitx fcitx-pinyin
 RUN apt-get install -y --no-install-recommends \
     epiphany-browser
 
