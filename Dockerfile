@@ -19,16 +19,14 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
         xfce4-terminal \
         docker.io \
         vim \
-        tmux
+        tmux \
+        gedit \
+        mpv
 
 RUN apt-get install -y --no-install-recommends \
     rdesktop
 RUN apt-get install -y --no-install-recommends \
-    gedit
-RUN apt-get install -y --no-install-recommends \
     fcitx fcitx-pinyin
-RUN apt-get install -y --no-install-recommends \
-    mpv
 RUN apt-get install -y --no-install-recommends \
     epiphany-browser
 
