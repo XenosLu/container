@@ -20,11 +20,10 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
         docker.io \
         vim \
         tmux \
+        rdesktop \
         gedit \
         mpv
 
-RUN apt-get install -y --no-install-recommends \
-    rdesktop
 RUN apt-get install -y --no-install-recommends \
     fcitx fcitx-pinyin
 RUN apt-get install -y --no-install-recommends \
