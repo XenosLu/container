@@ -37,6 +37,8 @@ RUN wget https://ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz &&\
     ln -s /usr/local/bin/lsz /usr/bin/sz &&\
     rm -rf /lrzsz-0.12.20.tar.gz
 
+RUN apk add --no-cache ffmpeg
+
 RUN ssh-keygen -A && \
     echo "root:$RANDOM" | chpasswd &&\
     sed -i s/#\\?PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config &&\
