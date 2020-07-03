@@ -30,9 +30,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
         fcitx-frontend-gtk3 \
         fcitx-config-gtk
 
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get install -y \
     epiphany-browser
-
 
 RUN  apt-get install -y \
         fonts-arphic-ukai \
@@ -55,9 +54,7 @@ RUN  apt-get install -y \
         fonts-sil-padauk \
         fonts-ubuntu
 
-
 # RUN apt-get install -y desktop-file-utils
-# gvfs
 
 # apt-get update &&\
 # apt-get install -y software-properties-common &&\
