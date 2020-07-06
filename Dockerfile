@@ -50,7 +50,9 @@ RUN  apt-get install -y \
         fonts-roboto \
         fonts-roboto-hinted \
         fonts-sil-mondulkiri \
-        fonts-sil-padauk \
+        fonts-sil-padauk
+
+RUN  apt-get install -y --no-install-recommends \
         fonts-ubuntu
 
 
