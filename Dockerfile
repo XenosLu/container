@@ -19,7 +19,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
         xfce4-terminal \
         docker.io \
         vim \
-        tmux \
         rdesktop \
         gedit \
         mpv &&\
@@ -54,7 +53,7 @@ RUN  apt-get install -y \
         fonts-sil-padauk \
         fonts-ubuntu
 
-# RUN apt-get install -y desktop-file-utils
+
 
 # apt-get update &&\
 # apt-get install -y software-properties-common &&\
