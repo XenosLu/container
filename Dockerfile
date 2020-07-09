@@ -31,6 +31,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
 
 RUN apt-get install -y \
     epiphany-browser
+RUN apt-get install -y \
+    geany
 
 RUN  apt-get install -y \
         fonts-arphic-ukai \
