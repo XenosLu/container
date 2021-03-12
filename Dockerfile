@@ -56,6 +56,9 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 
 RUN pip3 install python-crontab
 RUN pip3 install opencv-python
+RUN apk add py3-pillow
+RUN pip3 install easyocr
+
 
 ADD start /
 
