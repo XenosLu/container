@@ -20,6 +20,8 @@ RUN apk add --no-cache \
             libffi-dev \
             openssl-dev \
             gcc \
+            cmake \
+            g++ \
             libc-dev \
             make &&\
     apk add --no-cache \
@@ -53,6 +55,7 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
     mv ./kubectl /usr/local/bin/kubectl
 
 RUN pip3 install python-crontab
+RUN pip3 install opencv-python
 
 ADD start /
 
